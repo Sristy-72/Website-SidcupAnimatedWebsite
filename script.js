@@ -61,20 +61,38 @@ gsap.to(".navbar",{
   }
  });
 
- gsap.from(".cards",{
-  scale:0.8,
-  opacity:0,
-  duration:1,
-   stagger:0.1,
-  scrollTrigger:{
-    trigger:".cards",
-    scroller:"body",
-    // markers:true,
-    start:"top 70%",
-    end:"top 65%",
-    scrub:2,
-  }
- });
+ // gsap.from(".cards",{
+ //  scale:0.8,
+ //  opacity:0,
+ //  duration:1,
+ //   stagger:0.1,
+ //  scrollTrigger:{
+ //    trigger:".cards",
+ //    scroller:"body",
+ //    // markers:true,
+ //    start:"top 70%",
+ //    end:"top 65%",
+ //    scrub:2,
+ //  }
+ // });
+gsap.fromTo(
+  ".cards",
+  {
+    opacity:0,scale:0.8},
+    {
+      opacity:1,
+      scale:1,
+      duration:1,
+      scrollTrigger:{
+        trigger:".cards",
+        scroller:"body",
+        start:"top 80%",
+        end:"bottom 10%",
+        scrub:true,
+      },
+    }
+  
+);
  gsap.from("#colon1", {
   y: -70,
   x: -70,
